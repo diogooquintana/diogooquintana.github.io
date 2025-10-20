@@ -1,0 +1,622 @@
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Diogo Quintana - Offensive Midfielder</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+```
+    body {
+        font-family: 'Inter', 'Segoe UI', system-ui, -apple-system, sans-serif;
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 50%, #F7B5CD 100%);
+        color: #333;
+        line-height: 1.6;
+        min-width: 100%;
+    }
+    
+    .container {
+        max-width: 1200px;
+        width: 100%;
+        margin: 0 auto;
+        padding: 20px;
+    }
+    
+    .header {
+        background: linear-gradient(135deg, #000000 0%, #1a1a1a 100%);
+        border-radius: 20px;
+        padding: 50px 40px;
+        text-align: center;
+        box-shadow: 0 20px 60px rgba(247, 181, 205, 0.3);
+        margin-bottom: 30px;
+        border: 2px solid #F7B5CD;
+        position: relative;
+        overflow: hidden;
+    }
+
+    .header::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background: linear-gradient(45deg, transparent 30%, rgba(247, 181, 205, 0.1) 50%, transparent 70%);
+        pointer-events: none;
+    }
+    
+    .header h1 {
+        font-size: 3.5em;
+        background: linear-gradient(135deg, #F7B5CD 0%, #ffffff 100%);
+        -webkit-background-clip: text;
+        -webkit-text-fill-color: transparent;
+        background-clip: text;
+        margin-bottom: 10px;
+        font-weight: 800;
+        letter-spacing: 2px;
+        position: relative;
+    }
+    
+    .header .subtitle {
+        font-size: 1.5em;
+        color: #F7B5CD;
+        margin-bottom: 20px;
+        font-weight: 600;
+        letter-spacing: 1px;
+        position: relative;
+    }
+    
+    .info-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: 20px;
+        margin: 30px 0;
+    }
+    
+    .info-card {
+        background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+        padding: 25px;
+        border-radius: 15px;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        border-left: 4px solid #F7B5CD;
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .info-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 30px rgba(247, 181, 205, 0.3);
+    }
+    
+    .info-card h3 {
+        color: #000000;
+        margin-bottom: 10px;
+        font-size: 1.1em;
+        font-weight: 700;
+    }
+
+    .info-card p {
+        color: #333;
+        font-weight: 500;
+    }
+    
+    .section {
+        background: white;
+        border-radius: 20px;
+        padding: 40px;
+        margin-bottom: 30px;
+        box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+        border: 1px solid rgba(247, 181, 205, 0.2);
+    }
+    
+    .section h2 {
+        color: #000000;
+        font-size: 2.2em;
+        margin-bottom: 20px;
+        border-bottom: 3px solid #F7B5CD;
+        padding-bottom: 15px;
+        font-weight: 800;
+    }
+    
+    .timeline-item {
+        margin-bottom: 25px;
+        padding-left: 30px;
+        border-left: 3px solid #F7B5CD;
+    }
+    
+    .timeline-item h3 {
+        color: #000000;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    
+    .achievement {
+        background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 15px;
+        margin-bottom: 20px;
+        border: 2px solid #F7B5CD;
+        box-shadow: 0 10px 30px rgba(247, 181, 205, 0.2);
+    }
+    
+    .achievement h3 {
+        font-size: 1.6em;
+        margin-bottom: 10px;
+        color: #F7B5CD;
+        font-weight: 700;
+    }
+    
+    .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin-top: 20px;
+    }
+    
+    .skill-item {
+        background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+        padding: 18px;
+        border-radius: 12px;
+        border-left: 4px solid #F7B5CD;
+        box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+        transition: transform 0.3s, box-shadow 0.3s;
+    }
+
+    .skill-item:hover {
+        transform: translateX(5px);
+        box-shadow: 0 5px 20px rgba(247, 181, 205, 0.3);
+    }
+    
+    .skill-item strong {
+        color: #000000;
+        font-weight: 700;
+    }
+
+    /* SOCIAL MEDIA SECTION */
+    .social-section {
+        text-align: center;
+    }
+
+    .social-links {
+        display: flex;
+        justify-content: center;
+        gap: 20px;
+        flex-wrap: wrap;
+        margin-top: 25px;
+    }
+
+    .social-btn {
+        display: inline-flex;
+        align-items: center;
+        gap: 10px;
+        padding: 15px 30px;
+        border-radius: 50px;
+        text-decoration: none;
+        color: white;
+        font-weight: bold;
+        font-size: 1.1em;
+        transition: transform 0.3s, box-shadow 0.3s;
+        box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    }
+
+    .social-btn:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 25px rgba(0,0,0,0.3);
+    }
+
+    .social-btn.instagram {
+        background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    }
+
+    .social-btn.youtube {
+        background: #FF0000;
+    }
+
+    .social-btn.twitter {
+        background: #000000;
+        border: 2px solid #ffffff;
+    }
+
+    .social-btn.tiktok {
+        background: linear-gradient(135deg, #00f2ea 0%, #ff0050 100%);
+    }
+
+    .social-icon {
+        width: 24px;
+        height: 24px;
+        fill: white;
+    }
+
+    /* VIDEOS SECTION */
+    .videos-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 25px;
+        margin-top: 25px;
+    }
+
+    .video-card {
+        background: #ffffff;
+        border-radius: 15px;
+        overflow: hidden;
+        box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+        transition: transform 0.3s, box-shadow 0.3s;
+        border: 1px solid rgba(247, 181, 205, 0.2);
+    }
+
+    .video-card:hover {
+        transform: translateY(-10px);
+        box-shadow: 0 15px 40px rgba(247, 181, 205, 0.3);
+    }
+
+    .video-thumbnail {
+        position: relative;
+        padding-bottom: 56.25%;
+        background: linear-gradient(135deg, #000000 0%, #F7B5CD 100%);
+        overflow: hidden;
+    }
+
+    .video-thumbnail img {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+
+    .play-button {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 70px;
+        height: 70px;
+        background: rgba(255,0,0,0.9);
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: transform 0.3s;
+    }
+
+    .play-button:hover {
+        transform: translate(-50%, -50%) scale(1.1);
+    }
+
+    .play-button::after {
+        content: '';
+        width: 0;
+        height: 0;
+        border-left: 20px solid white;
+        border-top: 12px solid transparent;
+        border-bottom: 12px solid transparent;
+        margin-left: 5px;
+    }
+
+    .video-info {
+        padding: 20px;
+    }
+
+    .video-info h3 {
+        color: #000000;
+        margin-bottom: 10px;
+        font-size: 1.2em;
+        font-weight: 700;
+    }
+
+    .video-info p {
+        color: #666;
+        font-size: 0.95em;
+    }
+
+    .video-link {
+        text-decoration: none;
+        color: inherit;
+    }
+
+    @media (max-width: 768px) {
+        .header h1 {
+            font-size: 2em;
+        }
+        
+        .section {
+            padding: 20px;
+        }
+
+        .social-links {
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .social-btn {
+            width: 100%;
+            max-width: 300px;
+            justify-content: center;
+        }
+    }
+</style>
+```
+
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <!-- 📸 PROFILE PHOTO -->
+            <div style="margin-bottom: 30px; position: relative;">
+                <img src="https://i.postimg.cc/66b6K0bL/IMG-5498.jpg" alt="Diogo Quintana" style="width: 200px; height: 200px; border-radius: 50%; border: 6px solid #F7B5CD; object-fit: cover; box-shadow: 0 15px 40px rgba(247, 181, 205, 0.5); display: block; margin: 0 auto; background: white;">
+            </div>
+
+```
+        <h1>DIOGO QUINTANA</h1>
+        <p class="subtitle">OFFENSIVE MIDFIELDER</p>
+        <p style="font-size: 1.2em; color: #F7B5CD; position: relative;">Inter Miami CF Academy U-17 | MLS NEXT</p>
+        <p style="font-size: 1.1em; color: #cccccc; margin-top: 10px; position: relative;">
+            "Tactical intelligence, game vision, and passing precision"
+        </p>
+    </div>
+
+    <div class="info-grid">
+        <div class="info-card">
+            <h3>📅 Date of Birth</h3>
+            <p>November 5, 2009</p>
+        </div>
+        <div class="info-card">
+            <h3>🌍 Nationalities</h3>
+            <p>🇨🇺 🇪🇸 🇺🇸</p>
+        </div>
+        <div class="info-card">
+            <h3>⚽ Primary Position</h3>
+            <p>Offensive Midfielder</p>
+        </div>
+        <div class="info-card">
+            <h3>🔄 Alternative Positions</h3>
+            <p>Pivot (Defensive Midfielder), Winger (Both Sides)</p>
+        </div>
+        <div class="info-card">
+            <h3>🏆 Current Club</h3>
+            <p>Inter Miami CF Academy U-17</p>
+        </div>
+        <div class="info-card">
+            <h3>⭐ Role Model Player</h3>
+            <p>Toni Kroos</p>
+        </div>
+        <div class="info-card">
+            <h3>🧩 Leadership</h3>
+            <p>Experience as Team Captain</p>
+        </div>
+    </div>
+
+    <!-- SOCIAL MEDIA SECTION -->
+    <div class="section social-section">
+        <h2>🌐 Follow Me on Social Media</h2>
+        <p style="color: #666; margin-bottom: 10px;">Connect and follow my soccer journey</p>
+        
+        <div class="social-links">
+            <a href="https://www.instagram.com/diogooquintana?igsh=M2FleWt1ZGU2YTEw&utm_source=qr" class="social-btn instagram" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+                </svg>
+                Instagram
+            </a>
+            
+            <a href="https://www.youtube.com/@diogooquintana" class="social-btn youtube" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+                </svg>
+                YouTube
+            </a>
+            
+            <a href="#" class="social-btn twitter" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+                </svg>
+                Twitter/X
+            </a>
+            
+            <a href="https://www.tiktok.com/@diogooquintana?_t=ZP-90gdxbEwAHe&_r=1" class="social-btn tiktok" target="_blank">
+                <svg class="social-icon" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1-.1z"/>
+                </svg>
+                TikTok
+            </a>
+        </div>
+    </div>
+
+    <!-- VIDEOS SECTION -->
+    <div class="section">
+        <h2>🎥 Videos</h2>
+        <p style="color: #666; margin-bottom: 20px;">Player videos</p>
+        
+        <div class="videos-grid">
+            <!-- VIDEO 1 -->
+            <a href="https://youtu.be/fmsqysyEXwc?si=Td2LIDejlA4S6csk" class="video-link" target="_blank">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #F7B5CD 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em;">
+                            🎥⚽
+                        </div>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3>MLS NEXT | U16 | 14-15 Years Old | Season 2024-2025</h3>
+                        <p>Game vision and passing precision</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- VIDEO 2 -->
+            <a href="https://youtu.be/__PDGqnywy4?si=HPY6SGLvDn1KcYTH" class="video-link" target="_blank">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #F7B5CD 0%, #000000 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em;">
+                            🎥⚽️
+                        </div>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3>MLS NEXT | MIC | U16 | 14-15 Years Old | Season 2024-2025</h3>
+                        <p>Various Plays</p>
+                    </div>
+                </div>
+            </a>
+
+            <!-- VIDEO 3 -->
+            <a href="#" class="video-link" target="_blank">
+                <div class="video-card">
+                    <div class="video-thumbnail">
+                        <div style="width: 100%; height: 100%; background: linear-gradient(135deg, #000000 0%, #F7B5CD 100%); display: flex; align-items: center; justify-content: center; color: white; font-size: 2em;">
+                            🎥⚽️
+                        </div>
+                        <div class="play-button"></div>
+                    </div>
+                    <div class="video-info">
+                        <h3></h3>
+                        <p></p>
+                    </div>
+                </div>
+            </a>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚽️ Career Path</h2>
+        
+        <div class="timeline-item">
+            <h3>🇪🇸 Beginnings in Europe</h3>
+            <p>At the age of six, his family migrated to Malgrat de Mar, in Barcelona, Spain, where he began his sports training. A year later, he started his career at CD Malgrat, a club where he played his first full season and laid the foundations for his technical and tactical development.</p>
+        </div>
+
+        <div class="timeline-item">
+            <h3>🇺🇸 Development in the United States</h3>
+            <p>At the age of eight, his family moved to Florida, United States. At twelve, he joined <strong>Palm Beach United</strong> (ECNL), where he served as team captain for two seasons.</p>
+            <p style="margin-top: 10px;">Concurrently, he was a student for two years at the <strong>Acatec Spanish Academy</strong>, participating in international tournaments in Madrid (ESEI Elite Cup and Easter Cup).</p>
+            <p style="margin-top: 10px;">At fourteen, he joined <strong>South Florida FC</strong> (MLS NEXT), also serving as team captain.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>🏆 Achievements and International Tournaments</h2>
+        
+        <div class="achievement">
+            <h3>🥇 CHAMPION - Miami Youth International Cup 2024</h3>
+            <p>Called up as a reinforcement for Florida Academy Soccer, his team was crowned champion after winning 2–1 in the final, with Diogo scoring both goals as a center forward. This performance reaffirms his versatility and ability to perform in different positions on the field.</p>
+        </div>
+
+        <div class="achievement">
+            <h3>🥈 RUNNER-UP - MIC Tournament Punta Cana 2025</h3>
+            <p>In 2025, he reached the runner-up position with his team in the international MIC tournament based in Punta Cana, after eliminating Atlético de Madrid and disputing the final against Santos de Brazil. He stood out for his assists, goal, vision, and creative ability in midfield.</p>
+        </div>
+    </div>
+
+    <div class="section">
+        <h2>⚽ Inter Miami CF Academy</h2>
+        <p>During the last two years, he was part of Inter Miami CF's recruitment program, finally being officially incorporated in 2025 to the Inter Miami Academy, in the U-17 team.</p>
+        <p style="margin-top: 15px; font-weight: bold; color: #000000;">This achievement represents an important milestone in his career, being part of one of the most prestigious academies in the United States within the MLS NEXT framework.</p>
+    </div>
+
+    <div class="section">
+        <h2>📊 Technical and Tactical Profile</h2>
+        
+        <h3 style="color: #2a2a2a; margin: 20px 0 15px 0;">⭐ Distinctive Characteristics</h3>
+        
+        <div class="skills-grid">
+            <div class="skill-item">
+                <strong>👁️ Game Vision</strong>
+                <p>Ability to read the game and anticipate plays</p>
+            </div>
+            <div class="skill-item">
+                <strong>🎯 Passing Precision</strong>
+                <p>Excellent quality and accuracy in distribution</p>
+            </div>
+            <div class="skill-item">
+                <strong>💪 Control Under Pressure</strong>
+                <p>Maintains composure in high-intensity situations</p>
+            </div>
+            <div class="skill-item">
+                <strong>🧠 Decision Making</strong>
+                <p>Accurate tactical choices at the right moment</p>
+            </div>
+            <div class="skill-item">
+                <strong>⚡ Powerful Shot</strong>
+                <p>Great finishing ability from mid-range</p>
+            </div>
+            <div class="skill-item">
+                <strong>⚽ Ball Control</strong>
+                <p>Exceptional control and technical handling</p>
+            </div>
+            <div class="skill-item">
+                <strong>✨ Clean Technique</strong>
+                <p>Neat execution of technical fundamentals</p>
+            </div>
+            <div class="skill-item">
+                <strong>⚖️ Tactical Balance</strong>
+                <p>Perfect balance between attack and defense</p>
+            </div>
+            <div class="skill-item">
+                <strong>📍 Positioning</strong>
+                <p>Strategic location on the field</p>
+            </div>
+            <div class="skill-item">
+                <strong>🧩 Leadership</strong>
+                <p>Experience as captain and team reference</p>
+            </div>
+        </div>
+
+        <p style="margin-top: 30px; font-size: 1.1em; color: #000000; font-weight: bold;">
+            His attributes reflect a style similar to Toni Kroos, his role model player.
+        </p>
+    </div>
+
+    <div class="section">
+        <h2>🎖️ Awards and Medals</h2>
+        <ul style="list-style: none; padding-left: 0;">
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">🏆 Champion - Miami Youth International Cup</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">🥈 Runner-up - MIC Tournament Punta Cana</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">⚽ Madrid ESEI Elite Cup (with Acatec Academy)</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">⚽ Madrid Easter Cup (with Acatec Academy)</li>
+            <li style="padding: 10px 0; border-bottom: 1px solid #eee;">🎖️ Multiple recognitions in ECNL tournaments</li>
+            <li style="padding: 10px 0;">🏅 Medals in state and national competitions</li>
+        </ul>
+    </div>
+
+    <div class="section" style="text-align: center; background: linear-gradient(135deg, #000000 0%, #2a2a2a 100%); color: white; border: 2px solid #F7B5CD;">
+        <h2 style="color: #F7B5CD; border-color: #F7B5CD;">💭 Philosophy</h2>
+        <p style="font-size: 1.3em; font-style: italic; margin-top: 20px;">
+            "With a mindset focused on hard work and continuous improvement"
+        </p>
+        <p style="font-size: 1.1em; margin-top: 20px;">
+            Diogo continues to advance with the goal of becoming a professional soccer player and leaving a mark on international football.
+        </p>
+    </div>
+
+    <!-- CONTACT SECTION -->
+    <div class="section" style="text-align: center;">
+        <h2>📧 Contact</h2>
+        
+        <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 20px; margin-top: 25px;">
+            <!-- EMAIL -->
+            <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 25px; border-radius: 15px; border-left: 4px solid #F7B5CD; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 10px;">📧</div>
+                <h3 style="color: #000000; margin-bottom: 10px; font-weight: 700;">Email</h3>
+                <a href="mailto:diogooquintana@gmail.com" style="color: #F7B5CD; text-decoration: none; font-weight: 600; word-break: break-all;">diogooquintana@gmail.com</a>
+            </div>
+
+            <!-- PHONE -->
+            <div style="background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%); padding: 25px; border-radius: 15px; border-left: 4px solid #F7B5CD; box-shadow: 0 5px 20px rgba(0,0,0,0.1);">
+                <div style="font-size: 2.5em; margin-bottom: 10px;">📱</div>
+                <h3 style="color: #000000; margin-bottom: 10px; font-weight: 700;">Phone</h3>
+                <a href="tel:+15613171034" style="color: #F7B5CD; text-decoration: none; font-weight: 600;">+1 (561) 317-1034</a>
+            </div>
+        </div>
+    </div>
+</div>
+```
+
+</body>
+</html>
